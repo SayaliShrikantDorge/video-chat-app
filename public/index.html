@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pro Video Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="contacts">
+      <h2>Contacts</h2>
+      <div class="contact"><span class="status green"></span> Rizwan (You)</div>
+      <div class="contact"><span class="status green"></span> Test</div>
+    </aside>
+
+    <main class="video-section">
+      <div class="video-box">
+        <video id="localVideo" autoplay muted></video>
+        <video id="remoteVideo" autoplay></video>
+      </div>
+      <div class="controls">
+        <button id="muteBtn">🔇 Mute</button>
+        <button id="endCallBtn" class="end">🔴 End Call</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
