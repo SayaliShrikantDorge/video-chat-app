@@ -1,4 +1,6 @@
-const socket = io();
+const socket = io({
+  transports: ['websocket', 'polling']
+});
 const videoGrid = document.getElementById("video-grid");
 const chatBox = document.getElementById("chat-messages");
 const chatInput = document.getElementById("chatInput");
@@ -147,3 +149,7 @@ function addVideo(id, stream) {
   videoGrid.append(video);
   peers[id] = video;
 }
+
+socket.on('connect', () => {
+  console.log('Connected with transport:', socket.io.engine.transport.name);
+});
